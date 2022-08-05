@@ -30,7 +30,7 @@ function CreateCard() {
  // i have called the loadDek in the use effect and it's rendering the cards in the browser you can check it by refreshing the browser
       useEffect(() => { 
         loadDeck();
-       }, [deckId]);
+       } );
    
      async function loadDeck() {
       const abortController = new AbortController();

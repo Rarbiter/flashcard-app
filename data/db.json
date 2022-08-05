@@ -14,6 +14,11 @@
       "name": "ricki",
       "description": "this is a test",
       "id": 3
+    },
+    {
+      "name": "test ",
+      "description": "this is a test deck",
+      "id": 4
     }
   ],
   "cards": [
@@ -53,6 +58,18 @@
       "back": "b",
       "deckId": 1,
       "id": 7
+    },
+    {
+      "front": "test",
+      "back": "test",
+      "deckId": 4,
+      "id": 8
+    },
+    {
+      "front": "test 2",
+      "back": "test 2",
+      "deckId": 4,
+      "id": 9
     }
   ]
 }
