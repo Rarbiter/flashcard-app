@@ -1,9 +1,10 @@
 import {Link} from "react-router-dom"
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useHistory } from "react";
 import {listDecks, deleteDeck} from "../utils/api";
 
 function Home() {
  const [decks, setDecks] = useState([]);
+ const history = useHistory();
     
   useEffect(() => {
   const abortController = new AbortController(); // Create a new `AbortController`
@@ -33,11 +34,14 @@ document.title = "Flashcards are great.";
   };
 }, []);
  
-function onDelete (deckId) {
-const answer = window.confirm ("Delete this deck?")
-if (answer) {
-  deleteDeck(deckId)
-}
+async function onDelete (deckId) {
+  const answer = window.confirm ("Delete this deck?")
+  if (answer) {
+    console.log("onDelete inside if")
+    console.log(answer)
+    await deleteDeck(deckId)
+    history.push ("/")
+  }
 }
 
   return (
